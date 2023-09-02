@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="necklaces-styles.css"> <!-- Link to the new CSS file -->
+
+
     <title>Necklaces - EternalCharm</title>
 </head>
 
@@ -13,7 +15,7 @@
         <h1>EternalCharm - Necklaces</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="store1.html">Home</a></li>
                 <li><a href="necklaces.html">Necklaces</a></li>
                 <li><a href="watches.html">Watches</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -26,7 +28,11 @@
             <img src="necklace.png" alt="Necklace 1">
             <h2>Beautiful Necklace</h2>
             <p class="price">$49.99</p>
-            <button>Add to Cart</button>
+            <!-- Wrap the button with an anchor to open the popup -->
+<a href="cart-popup.html" class="open-popup">
+    <button class="add-to-cart-button">Add to Cart</button>
+</a>
+
         </div>
         <!-- Add more necklaces here -->
     </section>
@@ -34,5 +40,21 @@
     <footer>
         <p>&copy; 2023 EternalCharm. All rights reserved.</p>
     </footer>
+    <script>
+    const openPopupLinks = document.querySelectorAll('.open-popup');
+    const popup = document.querySelector('.popup');
+    const closePopup = document.querySelector('.close-popup');
+
+    openPopupLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            popup.style.display = 'block';
+        });
+    });
+
+    closePopup.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+</script>
 </body>
 </html>
